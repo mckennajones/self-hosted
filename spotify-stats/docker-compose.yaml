@@ -1,0 +1,37 @@
+version: "3"
+
+networks:
+  default:
+    name: apps_shared
+    external: true
+
+services:
+  server:
+    container_name: spotify-server
+    image: yooooomi/your_spotify_server
+    restart: always
+    ports:
+      - "8070:8080"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    environment:
+      API_ENDPOINT: http://spotify.api.mj.home # This MUST be included as a valid URL in the spotify dashboard (see below)
+      CLIENT_ENDPOINT: http://spotify.mj.home
+      SPOTIFY_PUBLIC: fb24a3ab181f4e7c8e6c2095c5049f52
+      SPOTIFY_SECRET: 8bd75c5141bd48148524a25a8ee58cb2
+  mongo:
+    container_name: spotify-mongo
+    image: mongo:4.4.8
+    volumes:
+      - ./your_spotify_db:/data/db
+
+  web:
+    container_name: spotify-web-ui
+    image: yooooomi/your_spotify_client
+    restart: always
+    ports:
+      - "3010:3000"
+    environment:
+      API_ENDPOINT: http://spotify.api.mj.home

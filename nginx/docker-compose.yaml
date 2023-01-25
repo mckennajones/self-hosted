@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf:ro"
+    restart: unless-stopped
+      
+networks:
+  default:
+    name: apps_shared
+    external: true

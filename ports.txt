@@ -1,0 +1,6 @@
+nginx 80
+linkding 7070
+pihole 8080
+syncthing 8384
+prometheus 9090
+grafana 3030
