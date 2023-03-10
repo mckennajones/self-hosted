@@ -1,0 +1,16 @@
+version: "3"
+services:
+  actual_server:
+    container_name: actual_server
+    image: actual-server:1.0
+    ports:
+      - "5006:5006"
+    volumes:
+      - ./data/server-files:/app/server-files
+      - ./data/user-files:/app/user-files
+    restart: unless-stopped
+
+networks:
+  default:
+    name: apps_shared
+    external: true

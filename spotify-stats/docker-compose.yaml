@@ -17,8 +17,8 @@ services:
     depends_on:
       - mongo
     environment:
-      API_ENDPOINT: http://spotify.api.mj.home # This MUST be included as a valid URL in the spotify dashboard (see below)
-      CLIENT_ENDPOINT: http://spotify.mj.home
+      API_ENDPOINT: http://spotify.api.mckjns.com # This MUST be included as a valid URL in the spotify dashboard (see below)
+      CLIENT_ENDPOINT: http://spotify.mckjns.com
       SPOTIFY_PUBLIC: fb24a3ab181f4e7c8e6c2095c5049f52
       SPOTIFY_SECRET: 8bd75c5141bd48148524a25a8ee58cb2
   mongo:
@@ -34,4 +34,4 @@ services:
     ports:
       - "3010:3000"
     environment:
-      API_ENDPOINT: http://spotify.api.mj.home
+      API_ENDPOINT: http://spotify.api.mckjns.com
