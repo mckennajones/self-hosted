@@ -37,15 +37,15 @@ services:
       - ./grafana-data:/var/lib/grafana
       - ./grafana.ini:/etc/grafana/grafana.ini
 
-  speedtest-exporter:
-    image: miguelndecarvalho/speedtest-exporter
-    container_name: speedtest-exporter
-    environment: []
-      # - SPEEDTEST_PORT=<speedtest-port> #optional
-      # - SPEEDTEST_SERVER=<server-id> #optional
-    ports:
-      - 9798:9798
-    restart: unless-stopped
+  # speedtest-exporter:
+  #   image: miguelndecarvalho/speedtest-exporter
+  #   container_name: speedtest-exporter
+  #   environment: []
+  #     # - SPEEDTEST_PORT=<speedtest-port> #optional
+  #     # - SPEEDTEST_SERVER=<server-id> #optional
+  #   ports:
+  #     - 9798:9798
+  #   restart: unless-stopped
 
   node-exporter:
     image: prom/node-exporter:latest
