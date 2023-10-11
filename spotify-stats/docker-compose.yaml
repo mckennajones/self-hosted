@@ -19,8 +19,8 @@ services:
     environment:
       API_ENDPOINT: https://spotify.api.mckjns.com # This MUST be included as a valid URL in the spotify dashboard (see below)
       CLIENT_ENDPOINT: https://spotify.mckjns.com
-      SPOTIFY_PUBLIC: fb24a3ab181f4e7c8e6c2095c5049f52
-      SPOTIFY_SECRET: 8bd75c5141bd48148524a25a8ee58cb2
+      SPOTIFY_PUBLIC: <redacted>
+      SPOTIFY_SECRET: <redacted>
   mongo:
     container_name: spotify-mongo
     image: mongo:4.4.8
