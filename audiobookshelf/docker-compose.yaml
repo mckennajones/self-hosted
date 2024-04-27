@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  audiobookshelf:
+    container_name: audiobookshelf
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    ports:
+      - 13378:80
+    volumes:
+      - ./audiobooks:/audiobooks
+      - ./podcasts:/podcasts
+      - ./config:/config
+      - ./metadata:/metadata
+    environment:
+      - TZ=America/Denver
+
+networks:
+  default:
+    name: apps_shared
+    external: true
