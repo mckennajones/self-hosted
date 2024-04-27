@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nginx:
+    container_name: tilde
+    image: nginx:latest
+    ports:
+      - "8089:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+
+networks:
+  default:
+    name: apps_shared
+    external: true
